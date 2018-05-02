@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <!-- 宣言的レンダリング -->
-  <div id="app">
-    {{ greet }}
-  </div>
-  <!-- ディレクティブの登場 -->
-  <div id="app-2">
-    <span v-bind:title="message">
-      Hover your mouse over me for a few seconds
-      to see my dynamically bound title!
-    </span>
-  </div>
-  <!-- 条件分岐とループ -->
-  <div id="app-3">
-    <span v-if="seen">Now you see me</span>
-  </div>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="app.js"></script>
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 宣言的レンダリング -->
+    <div id="app">
+      {{ greet }}
+    </div>
+    <!-- ディレクティブ（v-xx） -->
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+    </div>
+    <!-- 条件分岐とループ -->
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+    <!-- イベントの設定（文字の反転） -->
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button @click="reverseMessage">Reverse Message</button>
+    </div>
+    <!-- UIとデータの双方向バインディング -->
+    <div id="app-6">
+      <input type="text" v-model="favorite">
+      <p>{{ favorite }}が好きです</p>
+    </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html> 
