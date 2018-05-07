@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Vue インスタンスの作成 -->
+  <div id="app-1">
+    <p>
+      <span class="price">価格は{{ price }}円で</span><span class="quantity">数量は{{ quantity }}個です</span>
+    </p>
+  </div>
+
+  <!-- データとメソッド -->
+  <div id="app-2">
+    <span class="price">名前は{{ name }}円で</span><span class="price">価格は{{ price }}円です</span>
+    <button @click="price = Math.floor(price*1.1)">値上げ</button>
+    <button @click="price = Math.floor(price*0.9)">値下げ</button>
+  </div>
+
+  <!-- インスタンスライフサイクルフック -->
+  <div id="app-3">
+    <p>税込価格で{{ price }}円です</p>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
