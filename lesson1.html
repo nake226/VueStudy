@@ -7,21 +7,25 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- 宣言的レンダリング -->
+    <!-- 宣言的レンダリング(1) -->
     <div id="app">
       {{ greet }}
     </div>
-    <!-- ディレクティブ（v-xx） -->
+
+    <!-- 宣言的レンダリング(2) -->
     <div id="app-2">
       <span v-bind:title="message">
         Hover your mouse over me for a few seconds
         to see my dynamically bound title!
       </span>
     </div>
-    <!-- 条件分岐とループ -->
+
+    <!-- 条件分岐とループ(1) -->
     <div id="app-3">
       <span v-if="seen">Now you see me</span>
     </div>
+
+    <!-- 条件分岐とループ(2) -->
     <div id="app-4">
       <ol>
         <li v-for="todo in todos">
@@ -29,16 +33,27 @@
         </li>
       </ol>
     </div>
-    <!-- イベントの設定（文字の反転） -->
+
+    <!-- ユーザー入力の制御(1) -->
     <div id="app-5">
       <p>{{ message }}</p>
       <button @click="reverseMessage">Reverse Message</button>
     </div>
-    <!-- UIとデータの双方向バインディング -->
+
+    <!-- ユーザー入力の制御(2) -->
     <div id="app-6">
-      <input type="text" v-model="favorite">
-      <p>{{ favorite }}が好きです</p>
+      <input type="text" v-model="fruits">
+      <p>{{ fruits }}が好きです</p>
     </div>
+
+    <!-- コンポーネントによる構成 -->
+    <div id="app-7">
+      <ol class="todoList">
+        <todo-item v-for="item in todos" :todo="item"></todo-item>
+      </ol>
+    </div>
+
+    
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="app.js"></script>
   </body>
