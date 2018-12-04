@@ -3,16 +3,17 @@
 var app1 = new Vue({
   el: '#app-1',
   data: {
-    hasErr: true,
+    error: true,
     isApp: true
+  },
+  computed: {
+    errorMaker: function(){
+      return this.error? 'エラーを消す' : 'エラーを起こす';
+    }
   },
   methods: {
     changeErrStatus() {
-      if (this.hasErr) {
-        this.hasErr = false
-      } else {
-        this.hasErr = true
-      }
+      this.error = !this.error;
     }
   }
 })
